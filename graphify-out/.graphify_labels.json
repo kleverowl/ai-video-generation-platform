@@ -12,5 +12,11 @@
   "10": "frontend-dev.md",
   "11": "devops-deploy.md",
   "12": "qa-security.md",
-  "13": "LTX-2.5 22B Q4"
+  "13": "LTX-2.5 22B Q4",
+  "14": "verify-machine.sh",
+  "15": "Web app & dashboard rules",
+  "16": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+  "17": "Production-server Claude: video-editing skill bundle",
+  "18": "THIRD_PARTY.md",
+  "19": "install-skills.sh"
 }

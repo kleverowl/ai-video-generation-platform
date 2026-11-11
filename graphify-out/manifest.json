@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1794389377.4185174,
-    "ast_hash": "b075a7460d937a0e286e2f5f209a042a",
+    "mtime": 1794390540.3834848,
+    "ast_hash": "72c487a0d8e7a5f346fbe7fda906604e",
     "semantic_hash": ""
   },
   ".claude/agents/architecture-guard.md": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1794389887.049896,
-    "ast_hash": "a8cfbc234e11d4e4aa996e9576094c3a",
+    "mtime": 1794390671.1672642,
+    "ast_hash": "7002d1011bfdf33b1d4d8e37bcefdf2f",
     "semantic_hash": ""
   },
   "apps/web/README.md": {
@@ -55,9 +55,9 @@
     "semantic_hash": ""
   },
   "architecture-review/04-final-architecture.md": {
-    "mtime": 1794336877.8832948,
-    "ast_hash": "b7d9fdfcabc342f2ce97b5390ff90c20",
-    "semantic_hash": "b7d9fdfcabc342f2ce97b5390ff90c20"
+    "mtime": 1794390714.6758718,
+    "ast_hash": "47277c539a7f70c56c6f557b9e9eb454",
+    "semantic_hash": ""
   },
   "architecture-review/05-implementation-roadmap.md": {
     "mtime": 1794336988.32605,
@@ -100,24 +100,24 @@
     "semantic_hash": "6943b2dc314ed5d6258253c00f18cf10"
   },
   "docs/context/current-state.md": {
-    "mtime": 1794389076.709544,
-    "ast_hash": "9fed283b7d21f10fc1bf280719add255",
+    "mtime": 1794390732.501699,
+    "ast_hash": "bdfefbcd2f85479725a9a8ee328e6701",
     "semantic_hash": ""
   },
   "docs/context/decisions.md": {
-    "mtime": 1794388475.8226218,
-    "ast_hash": "3fb1a8fefc93b35cb56320daa2687965",
-    "semantic_hash": "3fb1a8fefc93b35cb56320daa2687965"
+    "mtime": 1794390714.673871,
+    "ast_hash": "b68d4af1320ea290e1d5e9ec13ff07b3",
+    "semantic_hash": ""
   },
   "docs/context/open-questions.md": {
-    "mtime": 1794388475.8526459,
-    "ast_hash": "5676ec6130fac9b1b06d23f9fe094a0c",
-    "semantic_hash": "5676ec6130fac9b1b06d23f9fe094a0c"
+    "mtime": 1794390714.674872,
+    "ast_hash": "c1b02e94c19fb7177994d909dd1b86de",
+    "semantic_hash": ""
   },
   "docs/context/project-brief.md": {
-    "mtime": 1794388475.6321545,
-    "ast_hash": "da47a3fabcd0556e2099e23f7228d9ac",
-    "semantic_hash": "da47a3fabcd0556e2099e23f7228d9ac"
+    "mtime": 1794390714.673871,
+    "ast_hash": "1a7fc75c6f0248b1330eff351f2089b6",
+    "semantic_hash": ""
   },
   "docs/poc/README.md": {
     "mtime": 1794388408.2960477,
@@ -130,9 +130,9 @@
     "semantic_hash": "dcc80463954dd482fba0bee2d4280334"
   },
   "infra/CLAUDE.md": {
-    "mtime": 1794388520.934283,
-    "ast_hash": "2daf918af0b74bafe0393ebfb9cc4b18",
-    "semantic_hash": "2daf918af0b74bafe0393ebfb9cc4b18"
+    "mtime": 1794390714.674872,
+    "ast_hash": "ad826ba5f2342a41e335d2deb46f8b7b",
+    "semantic_hash": ""
   },
   "infra/oracle/README.md": {
     "mtime": 1794388408.2374327,
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   ".claude/agents/frontend-dev.md": {
-    "mtime": 1794389164.403107,
-    "ast_hash": "3d6644aad00d9f7470acddc199d51693",
+    "mtime": 1794390555.1820948,
+    "ast_hash": "be6b02986b63e61f76965692d1b69815",
     "semantic_hash": ""
   },
   ".claude/agents/qa-security.md": {
@@ -225,18 +225,58 @@
     "semantic_hash": ""
   },
   ".claude/skills/setup-machine/SKILL.md": {
-    "mtime": 1794389707.291688,
-    "ast_hash": "16e28204b6458ec58927896cd5f942da",
+    "mtime": 1794390656.031991,
+    "ast_hash": "d61ca6f95f81cc3e9394cf47361ea63b",
     "semantic_hash": ""
   },
   "plan.md": {
-    "mtime": 1794390017.3060098,
-    "ast_hash": "55e0eb654d2d042920cb1fb3baef0603",
+    "mtime": 1794390908.6702044,
+    "ast_hash": "24a5be4658e3c666272517b371db5ba1",
     "semantic_hash": ""
   },
   ".claude/skills/tts-pronunciation/SKILL.md": {
     "mtime": 1794389376.7528956,
     "ast_hash": "15ec8935c2beda0f60f6f745fe9866c8",
+    "semantic_hash": ""
+  },
+  "scripts/claude-server/install-skills.sh": {
+    "mtime": 1794390595.9715314,
+    "ast_hash": "f96064b23ff5ff0d7d19789a6929f87c",
+    "semantic_hash": ""
+  },
+  "scripts/verify-machine.sh": {
+    "mtime": 1794390632.876612,
+    "ast_hash": "ebf66a21e197851fcf26f40b3e319116",
+    "semantic_hash": ""
+  },
+  ".claude/skills/THIRD_PARTY.md": {
+    "mtime": 1794390540.4643219,
+    "ast_hash": "275ab390085b8ec8173b041e85440a4c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/video-editing-ffmpeg/SKILL.md": {
+    "mtime": 1794390595.4710305,
+    "ast_hash": "83eeb8a68e264a48494c76bee2e2cbc7",
+    "semantic_hash": ""
+  },
+  "apps/web/CLAUDE.md": {
+    "mtime": 1794390555.139922,
+    "ast_hash": "c3a41c02a2a93d925afc4f914aae7c44",
+    "semantic_hash": ""
+  },
+  "docs/adr/0003-region-us-central1.md": {
+    "mtime": 1794390699.3764818,
+    "ast_hash": "0403e213e55b9a8edd46f1db7d00d88d",
+    "semantic_hash": ""
+  },
+  "infra/claude-server/README.md": {
+    "mtime": 1794390595.616523,
+    "ast_hash": "8fc0ca00889f92a9722f79502f66ccdc",
+    "semantic_hash": ""
+  },
+  "infra/claude-server/skills.txt": {
+    "mtime": 1794390595.92952,
+    "ast_hash": "7cb7565250b34c35559cab31c1365354",
     "semantic_hash": ""
   }
 }

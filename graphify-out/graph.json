@@ -98,7 +98,106 @@
   },
   "nodes": [
     {
-      "label": "SKILL.md",
+      "label": "frontend-dev.md",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "frontend-dev.md"
+    },
+    {
+      "label": "Scope",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_scope",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "scope"
+    },
+    {
+      "label": "Before you start",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_before_you_start",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "before you start"
+    },
+    {
+      "label": "Design bar",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_design_bar",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "design bar"
+    },
+    {
+      "label": "Product rules (from the spec and the review)",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_product_rules_from_the_spec_and_the_review",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "product rules (from the spec and the review)"
+    },
+    {
+      "label": "Engineering standards",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_engineering_standards",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "engineering standards"
+    },
+    {
+      "label": "Done",
+      "file_type": "document",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "claude_agents_frontend_dev_done",
+      "community": 10,
+      "community_name": "frontend-dev.md",
+      "norm_label": "done"
+    },
+    {
+      "label": "THIRD_PARTY.md",
+      "file_type": "document",
+      "source_file": ".claude/skills/THIRD_PARTY.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_skills_third_party",
+      "community": 18,
+      "community_name": "THIRD_PARTY.md",
+      "norm_label": "third_party.md"
+    },
+    {
+      "label": "Third-party skills: sources and licences",
+      "file_type": "document",
+      "source_file": ".claude/skills/THIRD_PARTY.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_skills_third_party_third_party_skills_sources_and_licences",
+      "community": 18,
+      "community_name": "THIRD_PARTY.md",
+      "norm_label": "third-party skills: sources and licences"
+    },
+    {
+      "label": "setup-machine/SKILL.md",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
       "source_location": "L1",
@@ -106,7 +205,7 @@
       "id": "claude_skills_setup_machine_skill",
       "community": 6,
       "community_name": "Cost Control & Storage",
-      "norm_label": "skill.md"
+      "norm_label": "setup-machine/skill.md"
     },
     {
       "label": "One-time machine setup",
@@ -145,7 +244,7 @@
       "label": "2. graphify",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_2_graphify",
       "community": 6,
@@ -156,7 +255,7 @@
       "label": "3a. Project plugins (enabled in the committed `.claude/settings.json`)",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_3a_project_plugins_enabled_in_the_committed_claude_settings_json",
       "community": 6,
@@ -167,7 +266,7 @@
       "label": "3b. Project MCP servers (`.mcp.json`, committed)",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L112",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_3b_project_mcp_servers_mcp_json_committed",
       "community": 6,
@@ -178,7 +277,7 @@
       "label": "4. No user-global rules",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L122",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_4_no_user_global_rules",
       "community": 6,
@@ -189,7 +288,7 @@
       "label": "5. Logins (the user runs these; Claude never handles credentials)",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L127",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_5_logins_the_user_runs_these_claude_never_handles_credentials",
       "community": 6,
@@ -197,26 +296,312 @@
       "norm_label": "5. logins (the user runs these; claude never handles credentials)"
     },
     {
-      "label": "6. Mark done and report",
+      "label": "5b. Design and video skills (vendored in the repo; just verify)",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L136",
+      "source_location": "L135",
       "_origin": "ast",
-      "id": "claude_skills_setup_machine_skill_6_mark_done_and_report",
+      "id": "claude_skills_setup_machine_skill_5b_design_and_video_skills_vendored_in_the_repo_just_verify",
       "community": 6,
       "community_name": "Cost Control & Storage",
-      "norm_label": "6. mark done and report"
+      "norm_label": "5b. design and video skills (vendored in the repo; just verify)"
+    },
+    {
+      "label": "6. READINESS GATE, then mark done",
+      "file_type": "document",
+      "source_file": ".claude/skills/setup-machine/SKILL.md",
+      "source_location": "L140",
+      "_origin": "ast",
+      "id": "claude_skills_setup_machine_skill_6_readiness_gate_then_mark_done",
+      "community": 6,
+      "community_name": "Cost Control & Storage",
+      "norm_label": "6. readiness gate, then mark done"
     },
     {
       "label": "Never",
       "file_type": "document",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L141",
+      "source_location": "L147",
       "_origin": "ast",
       "id": "claude_skills_setup_machine_skill_never",
       "community": 6,
       "community_name": "Cost Control & Storage",
       "norm_label": "never"
+    },
+    {
+      "label": "video-editing-ffmpeg/SKILL.md",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "video-editing-ffmpeg/skill.md"
+    },
+    {
+      "label": "Video editing with FFmpeg",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "video editing with ffmpeg"
+    },
+    {
+      "label": "1. Inspect first",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_1_inspect_first",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "1. inspect first"
+    },
+    {
+      "label": "2. Join clips",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_2_join_clips",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "2. join clips"
+    },
+    {
+      "label": "3. Trim and reframe",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_3_trim_and_reframe",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "3. trim and reframe"
+    },
+    {
+      "label": "4. Captions (burned in)",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_4_captions_burned_in",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "4. captions (burned in)"
+    },
+    {
+      "label": "5. Audio: narration, music ducking, loudness",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_5_audio_narration_music_ducking_loudness",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "5. audio: narration, music ducking, loudness"
+    },
+    {
+      "label": "6. Delivery encode",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_6_delivery_encode",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "6. delivery encode"
+    },
+    {
+      "label": "7. Automated QA (render-worker, before uploading to R2)",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_7_automated_qa_render_worker_before_uploading_to_r2",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "7. automated qa (render-worker, before uploading to r2)"
+    },
+    {
+      "label": "Rules",
+      "file_type": "document",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "claude_skills_video_editing_ffmpeg_skill_rules",
+      "community": 7,
+      "community_name": "LTX Model & Licensing",
+      "norm_label": "rules"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_claude",
+      "community": 15,
+      "community_name": "Web app & dashboard rules",
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "Web app & dashboard rules",
+      "file_type": "document",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_claude_web_app_dashboard_rules",
+      "community": 15,
+      "community_name": "Web app & dashboard rules",
+      "norm_label": "web app & dashboard rules"
+    },
+    {
+      "label": "Visual direction: light theme, premium, calm",
+      "file_type": "document",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "apps_web_claude_visual_direction_light_theme_premium_calm",
+      "community": 15,
+      "community_name": "Web app & dashboard rules",
+      "norm_label": "visual direction: light theme, premium, calm"
+    },
+    {
+      "label": "Skill workflow (use in this order)",
+      "file_type": "document",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "apps_web_claude_skill_workflow_use_in_this_order",
+      "community": 15,
+      "community_name": "Web app & dashboard rules",
+      "norm_label": "skill workflow (use in this order)"
+    },
+    {
+      "label": "Definition of done for any screen",
+      "file_type": "document",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "apps_web_claude_definition_of_done_for_any_screen",
+      "community": 15,
+      "community_name": "Web app & dashboard rules",
+      "norm_label": "definition of done for any screen"
+    },
+    {
+      "label": "0003-region-us-central1.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0003_region_us_central1",
+      "community": 16,
+      "community_name": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "norm_label": "0003-region-us-central1.md"
+    },
+    {
+      "label": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "file_type": "document",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0003_region_us_central1_adr_0003_cloud_run_region_is_us_central1_iowa",
+      "community": 16,
+      "community_name": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "norm_label": "adr-0003: cloud run region is us-central1 (iowa)"
+    },
+    {
+      "label": "Context",
+      "file_type": "document",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "docs_adr_0003_region_us_central1_context",
+      "community": 16,
+      "community_name": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "norm_label": "context"
+    },
+    {
+      "label": "Decision",
+      "file_type": "document",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "docs_adr_0003_region_us_central1_decision",
+      "community": 16,
+      "community_name": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "norm_label": "decision"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "docs_adr_0003_region_us_central1_consequences",
+      "community": 16,
+      "community_name": "ADR-0003: Cloud Run region is us-central1 (Iowa)",
+      "norm_label": "consequences"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "infra_claude_server_readme",
+      "community": 17,
+      "community_name": "Production-server Claude: video-editing skill bundle",
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Production-server Claude: video-editing skill bundle",
+      "file_type": "document",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "infra_claude_server_readme_production_server_claude_video_editing_skill_bundle",
+      "community": 17,
+      "community_name": "Production-server Claude: video-editing skill bundle",
+      "norm_label": "production-server claude: video-editing skill bundle"
+    },
+    {
+      "label": "Bundle (`skills.txt` is the source of truth)",
+      "file_type": "document",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "infra_claude_server_readme_bundle_skills_txt_is_the_source_of_truth",
+      "community": 17,
+      "community_name": "Production-server Claude: video-editing skill bundle",
+      "norm_label": "bundle (`skills.txt` is the source of truth)"
+    },
+    {
+      "label": "Install (devops-deploy prepares; the user approves running it on the server)",
+      "file_type": "document",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "infra_claude_server_readme_install_devops_deploy_prepares_the_user_approves_running_it_on_the_server",
+      "community": 17,
+      "community_name": "Production-server Claude: video-editing skill bundle",
+      "norm_label": "install (devops-deploy prepares; the user approves running it on the server)"
+    },
+    {
+      "label": "Security (qa-security gate)",
+      "file_type": "document",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "infra_claude_server_readme_security_qa_security_gate",
+      "community": 17,
+      "community_name": "Production-server Claude: video-editing skill bundle",
+      "norm_label": "security (qa-security gate)"
     },
     {
       "label": "plan.md",
@@ -277,7 +662,7 @@
       "label": "Hard limits (no agent crosses these without the user's explicit \"yes\" in the current session)",
       "file_type": "document",
       "source_file": "plan.md",
-      "source_location": "L66",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "plan_hard_limits_no_agent_crosses_these_without_the_user_s_explicit_yes_in_the_current_session",
       "community": 8,
@@ -288,7 +673,7 @@
       "label": "2. Needs you (the Lead keeps this list current)",
       "file_type": "document",
       "source_file": "plan.md",
-      "source_location": "L77",
+      "source_location": "L78",
       "_origin": "ast",
       "id": "plan_2_needs_you_the_lead_keeps_this_list_current",
       "community": 8,
@@ -299,7 +684,7 @@
       "label": "3. Task queue",
       "file_type": "document",
       "source_file": "plan.md",
-      "source_location": "L89",
+      "source_location": "L92",
       "_origin": "ast",
       "id": "plan_3_task_queue",
       "community": 8,
@@ -310,12 +695,147 @@
       "label": "4. Log (one line per task completion; newest last)",
       "file_type": "document",
       "source_file": "plan.md",
-      "source_location": "L119",
+      "source_location": "L123",
       "_origin": "ast",
       "id": "plan_4_log_one_line_per_task_completion_newest_last",
       "community": 8,
       "community_name": "plan.md: Autonomous Work Plan",
       "norm_label": "4. log (one line per task completion; newest last)"
+    },
+    {
+      "label": "install-skills.sh",
+      "file_type": "code",
+      "source_file": "scripts/claude-server/install-skills.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "scripts_claude_server_install_skills",
+      "community": 19,
+      "community_name": "install-skills.sh",
+      "norm_label": "install-skills.sh"
+    },
+    {
+      "label": "install-skills.sh script",
+      "file_type": "code",
+      "source_file": "scripts/claude-server/install-skills.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "scripts_claude_server_install_skills_sh__entry",
+      "community": 19,
+      "community_name": "install-skills.sh",
+      "norm_label": "install-skills.sh script"
+    },
+    {
+      "label": "verify-machine.sh",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "verify-machine.sh"
+    },
+    {
+      "label": "verify-machine.sh script",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_sh__entry",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "verify-machine.sh script"
+    },
+    {
+      "label": "ok()",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L7",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_ok",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "ok()"
+    },
+    {
+      "label": "bad()",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L8",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_bad",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "bad()"
+    },
+    {
+      "label": "opt()",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L9",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_opt",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "opt()"
+    },
+    {
+      "label": "have()",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L10",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_have",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "have()"
+    },
+    {
+      "label": "ver_ge()",
+      "file_type": "code",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L11",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "scripts_verify_machine_ver_ge",
+      "community": 14,
+      "community_name": "verify-machine.sh",
+      "norm_label": "ver_ge()"
     },
     {
       "label": "backend-dev.md",
@@ -437,72 +957,6 @@
       "community_name": "devops-deploy.md",
       "norm_label": "done",
       "id": "claude_agents_devops_deploy_done"
-    },
-    {
-      "label": "frontend-dev.md",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "frontend-dev.md",
-      "id": "claude_agents_frontend_dev"
-    },
-    {
-      "label": "Scope",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "scope",
-      "id": "claude_agents_frontend_dev_scope"
-    },
-    {
-      "label": "Before you start",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "before you start",
-      "id": "claude_agents_frontend_dev_before_you_start"
-    },
-    {
-      "label": "Product rules (from the spec and the review)",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "product rules (from the spec and the review)",
-      "id": "claude_agents_frontend_dev_product_rules_from_the_spec_and_the_review"
-    },
-    {
-      "label": "Engineering standards",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "engineering standards",
-      "id": "claude_agents_frontend_dev_engineering_standards"
-    },
-    {
-      "label": "Done",
-      "file_type": "document",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L34",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "frontend-dev.md",
-      "norm_label": "done",
-      "id": "claude_agents_frontend_dev_done"
     },
     {
       "label": "qa-security.md",
@@ -627,9 +1081,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 0,
       "norm_label": "comfyui api",
-      "community_name": "LTX-2.5 22B Q4",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_comfyui"
     },
     {
@@ -641,9 +1095,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "voicestudio tts",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_voicestudio_tts"
     },
     {
@@ -655,9 +1109,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 0,
       "norm_label": "whisper transcription",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_whisper"
     },
     {
@@ -683,9 +1137,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "cloudflare r2 video-output bucket",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_cloudflare_r2_video_output"
     },
     {
@@ -697,9 +1151,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "remotion + ffmpeg cpu rendering",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_remotion_ffmpeg_rendering"
     },
     {
@@ -926,9 +1380,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "cloudflare cdn edge caching",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "system_architecture_technical_specification_cloudflare_cdn_edge_cache"
     },
     {
@@ -1126,9 +1580,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "k2-fsa omnivoice tts engine",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_01_agent_1_review_omnivoice"
     },
     {
@@ -1140,9 +1594,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "remotion company license (automators)",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_01_agent_1_review_remotion_company_license"
     },
     {
@@ -1243,9 +1697,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Real risk is state reconciliation, not queue transport; prevents orphaned/duplicate executions",
-      "community": 0,
+      "community": 4,
       "norm_label": "postgres state machine + reconciler",
-      "community_name": "Original Cloud Run Plan",
+      "community_name": "Final MVP Pipeline",
       "id": "architecture_review_02_agent_2_review_postgres_state_machine_reconciler"
     },
     {
@@ -1271,9 +1725,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 0,
       "norm_label": "faster-whisper on cpu / forced alignment",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_review_02_agent_2_review_faster_whisper_cpu"
     },
     {
@@ -1327,9 +1781,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "final recommended architecture (chief architect arbitration)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_04_final_architecture_doc"
     },
     {
@@ -1371,9 +1825,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 0,
       "norm_label": "gpu-worker image (comfyui + ltx only)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_review_04_final_architecture_gpu_worker_image"
     },
     {
@@ -1385,9 +1839,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "tts-worker cpu job",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_04_final_architecture_tts_worker"
     },
     {
@@ -1399,9 +1853,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "render-worker ffmpeg cpu job",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_04_final_architecture_render_worker"
     },
     {
@@ -1414,9 +1868,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Avoids ~$0.12/GiB GCP egress and NAT for GPU job",
-      "community": 7,
+      "community": 3,
       "norm_label": "gcs work bucket (7-day lifecycle)",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_04_final_architecture_gcs_work_bucket"
     },
     {
@@ -1428,9 +1882,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "write-ahead dispatching state + idempotency key",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_04_final_architecture_write_ahead_dispatch"
     },
     {
@@ -1512,9 +1966,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "phase-2 warm-disk gpu vm pool",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_04_final_architecture_warm_disk_vm_pool"
     },
     {
@@ -1541,9 +1995,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "poc register (poc-0..poc-10)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_04_final_architecture_poc_register"
     },
     {
@@ -1555,9 +2009,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 0,
       "norm_label": "final mvp architecture",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_review_04_final_architecture_mvp_architecture"
     },
     {
@@ -1597,9 +2051,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "phase 1 infrastructure foundation",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_05_implementation_roadmap_phase1_infra_foundation"
     },
     {
@@ -1611,9 +2065,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "phase 2 gpu worker (critical path)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_05_implementation_roadmap_phase2_gpu_worker"
     },
     {
@@ -1625,9 +2079,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "phase 3 video generation pipeline",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_05_implementation_roadmap_phase3_pipeline"
     },
     {
@@ -1653,9 +2107,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "phase 6 monitoring and production hardening",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_05_implementation_roadmap_phase6_hardening"
     },
     {
@@ -1667,9 +2121,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "reconciler chaos tests",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "architecture_review_05_implementation_roadmap_chaos_tests"
     },
     {
@@ -1752,9 +2206,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "d5 single vs separate gpu workers",
-      "community_name": "GPU Options & Fallbacks",
+      "community_name": "Original Cloud Run Plan",
       "id": "architecture_review_06_decision_matrix_d5_single_gpu_worker"
     },
     {
@@ -1766,9 +2220,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "d6 rendering decision",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_06_decision_matrix_d6_rendering"
     },
     {
@@ -1780,9 +2234,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 4,
       "norm_label": "d7 queue decision",
-      "community_name": "Original Cloud Run Plan",
+      "community_name": "Final MVP Pipeline",
       "id": "architecture_review_06_decision_matrix_d7_queue"
     },
     {
@@ -1794,9 +2248,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 3,
       "norm_label": "d9 output storage decision",
-      "community_name": "LTX Model & Licensing",
+      "community_name": "GPU Options & Fallbacks",
       "id": "architecture_review_06_decision_matrix_d9_output_storage"
     },
     {
@@ -1865,9 +2319,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Read-only reviewer; legitimate direction changes should get an ADR rather than a rejection.",
-      "community": 2,
+      "community": 5,
       "norm_label": "architecture guard rule checklist",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "_claude_agents_architecture_guard_rule_checklist"
     },
     {
@@ -1923,9 +2377,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Per-second instance-based rates verified 2026-11-11; asia-southeast1 is x1.2 of Tier 1; re-verify if older than ~90 days.",
-      "community": 2,
+      "community": 1,
       "norm_label": "verified cloud run gpu/cpu unit rates",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Claude Workflow Skills",
       "id": "_claude_skills_cost_estimate_skill_verified_rates"
     },
     {
@@ -1937,9 +2391,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "gpu job cost formula (04 \u00a715.2)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "_claude_skills_cost_estimate_skill_gpu_cost_formula"
     },
     {
@@ -2010,9 +2464,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Every benchmark value must link to a raw log or execution ID; estimates labelled ESTIMATE; failures reported as plainly as successes.",
-      "community": 2,
+      "community": 5,
       "norm_label": "no number without a log",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "_claude_skills_poc_record_skill_no_number_without_log"
     },
     {
@@ -2168,9 +2622,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Proposed/undecided. Node/TS: one runtime on 12 GB arm64 VM, shared types with Next.js, pg-boss native. FastAPI: same language as Python workers, Pydantic can share job contract. Decide before Phase 4.",
-      "community": 5,
+      "community": 1,
       "norm_label": "adr-0002: backend language (fastapi vs node/ts)",
-      "community_name": "Decisions & Open Questions",
+      "community_name": "Claude Workflow Skills",
       "id": "docs_adr_0002_backend_language"
     },
     {
@@ -2267,9 +2721,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "r-d1 cloud run gpu jobs as mvp gpu platform",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "docs_context_decisions_r_d1"
     },
     {
@@ -2309,9 +2763,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "r-d5 one gpu image; tts and render as cpu jobs",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "docs_context_decisions_r_d5"
     },
     {
@@ -2323,9 +2777,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "r-d6 ffmpeg-only rendering for mvp",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "docs_context_decisions_r_d6"
     },
     {
@@ -2480,9 +2934,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Cloud Run jobs GPU has no preemptible/spot option; Spot GPUs exist only on Compute Engine (phase-2).",
-      "community": 4,
+      "community": 1,
       "norm_label": "oq-3 preemptible gpus on cloud run",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "docs_context_open_questions_oq_3"
     },
     {
@@ -2523,9 +2977,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 1,
       "norm_label": "oq-5 backend language fastapi vs node/ts",
-      "community_name": "Decisions & Open Questions",
+      "community_name": "Claude Workflow Skills",
       "id": "docs_context_open_questions_oq_5"
     },
     {
@@ -2595,9 +3049,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "oq-10 automated qa checks",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "docs_context_open_questions_oq_10"
     },
     {
@@ -2637,9 +3091,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 1,
       "norm_label": "project brief",
-      "community_name": "Decisions & Open Questions",
+      "community_name": "Claude Workflow Skills",
       "id": "docs_context_project_brief"
     },
     {
@@ -2651,9 +3105,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "dispatcher",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "docs_context_project_brief_dispatcher"
     },
     {
@@ -2934,9 +3388,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 1,
       "norm_label": "scripts (cost calculator, manifest hashing, smoke tests)",
-      "community_name": "Final MVP Pipeline",
+      "community_name": "Claude Workflow Skills",
       "id": "scripts_readme"
     },
     {
@@ -2948,9 +3402,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "services rules claude.md",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "services_claude"
     },
     {
@@ -2963,9 +3417,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Postgres is source of truth; worker callbacks are hints only; protects against dispatcher crash windows.",
-      "community": 2,
+      "community": 5,
       "norm_label": "write-ahead dispatch (dispatching state + idempotency key before runjob)",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "services_claude_write_ahead_dispatch"
     },
     {
@@ -2992,9 +3446,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "presigned r2 urls (15-60 min, ownership check)",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "services_claude_presigned_r2_urls"
     },
     {
@@ -3034,9 +3488,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "tests/e2e chaos tests",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "tests_e2e_readme"
     },
     {
@@ -3091,9 +3545,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
+      "community": 5,
       "norm_label": "sigterm handling (~10 s)",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "workers_claude_sigterm_handling"
     },
     {
@@ -3148,9 +3602,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Only component holding an R2 write token.",
-      "community": 2,
+      "community": 5,
       "norm_label": "workers/render-worker ffmpeg cpu job",
-      "community_name": "Control Plane & Job Contract",
+      "community_name": "Decisions & Open Questions",
       "id": "workers_render_worker_readme"
     },
     {
@@ -3170,6 +3624,83 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_before_you_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_design_bar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_done",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_engineering_standards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_product_rules_from_the_spec_and_the_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/agents/frontend-dev.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_agents_frontend_dev",
+      "target": "claude_agents_frontend_dev_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/THIRD_PARTY.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_third_party",
+      "target": "claude_skills_third_party_third_party_skills_sources_and_licences",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -3207,7 +3738,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
@@ -3218,7 +3749,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
@@ -3229,7 +3760,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L112",
+      "source_location": "L111",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
@@ -3240,7 +3771,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L122",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
@@ -3251,7 +3782,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L127",
+      "source_location": "L126",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
@@ -3262,22 +3793,264 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L136",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
-      "target": "claude_skills_setup_machine_skill_6_mark_done_and_report",
+      "target": "claude_skills_setup_machine_skill_5b_design_and_video_skills_vendored_in_the_repo_just_verify",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".claude/skills/setup-machine/SKILL.md",
-      "source_location": "L141",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
+      "target": "claude_skills_setup_machine_skill_6_readiness_gate_then_mark_done",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/setup-machine/SKILL.md",
+      "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_skills_setup_machine_skill_one_time_machine_setup",
       "target": "claude_skills_setup_machine_skill_never",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill",
+      "target": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_1_inspect_first",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_2_join_clips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_3_trim_and_reframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_4_captions_burned_in",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_5_audio_narration_music_ducking_loudness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_6_delivery_encode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_7_automated_qa_render_worker_before_uploading_to_r2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/video-editing-ffmpeg/SKILL.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_skills_video_editing_ffmpeg_skill_video_editing_with_ffmpeg",
+      "target": "claude_skills_video_editing_ffmpeg_skill_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_claude",
+      "target": "apps_web_claude_web_app_dashboard_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_claude_web_app_dashboard_rules",
+      "target": "apps_web_claude_definition_of_done_for_any_screen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_claude_web_app_dashboard_rules",
+      "target": "apps_web_claude_skill_workflow_use_in_this_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/CLAUDE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_claude_web_app_dashboard_rules",
+      "target": "apps_web_claude_visual_direction_light_theme_premium_calm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0003_region_us_central1",
+      "target": "docs_adr_0003_region_us_central1_adr_0003_cloud_run_region_is_us_central1_iowa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0003_region_us_central1_adr_0003_cloud_run_region_is_us_central1_iowa",
+      "target": "docs_adr_0003_region_us_central1_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0003_region_us_central1_adr_0003_cloud_run_region_is_us_central1_iowa",
+      "target": "docs_adr_0003_region_us_central1_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0003-region-us-central1.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0003_region_us_central1_adr_0003_cloud_run_region_is_us_central1_iowa",
+      "target": "docs_adr_0003_region_us_central1_decision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "infra_claude_server_readme",
+      "target": "infra_claude_server_readme_production_server_claude_video_editing_skill_bundle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "infra_claude_server_readme_production_server_claude_video_editing_skill_bundle",
+      "target": "infra_claude_server_readme_bundle_skills_txt_is_the_source_of_truth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "infra_claude_server_readme_production_server_claude_video_editing_skill_bundle",
+      "target": "infra_claude_server_readme_install_devops_deploy_prepares_the_user_approves_running_it_on_the_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "infra/claude-server/README.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "infra_claude_server_readme_production_server_claude_video_editing_skill_bundle",
+      "target": "infra_claude_server_readme_security_qa_security_gate",
       "confidence_score": 1.0
     },
     {
@@ -3317,7 +4090,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plan.md",
-      "source_location": "L77",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "source": "plan_plan_md_autonomous_work_plan",
@@ -3328,7 +4101,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plan.md",
-      "source_location": "L89",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
       "source": "plan_plan_md_autonomous_work_plan",
@@ -3339,7 +4112,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plan.md",
-      "source_location": "L119",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "plan_plan_md_autonomous_work_plan",
@@ -3361,11 +4134,148 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plan.md",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
       "source": "plan_1_protocol_the_lead_follows_this_every_iteration",
       "target": "plan_hard_limits_no_agent_crosses_these_without_the_user_s_explicit_yes_in_the_current_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/claude-server/install-skills.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_claude_server_install_skills",
+      "target": "scripts_claude_server_install_skills_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_bad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_have",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_opt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_verify_machine",
+      "target": "scripts_verify_machine_ver_ge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "source": "scripts_verify_machine_sh__entry",
+      "target": "scripts_verify_machine_bad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "source": "scripts_verify_machine_sh__entry",
+      "target": "scripts_verify_machine_have",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "source": "scripts_verify_machine_sh__entry",
+      "target": "scripts_verify_machine_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "source": "scripts_verify_machine_sh__entry",
+      "target": "scripts_verify_machine_opt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/verify-machine.sh",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "source": "scripts_verify_machine_sh__entry",
+      "target": "scripts_verify_machine_ver_ge",
       "confidence_score": 1.0
     },
     {
@@ -3466,61 +4376,6 @@
       "confidence_score": 1.0,
       "source": "claude_agents_devops_deploy",
       "target": "claude_agents_devops_deploy_scope"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "claude_agents_frontend_dev",
-      "target": "claude_agents_frontend_dev_before_you_start"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "claude_agents_frontend_dev",
-      "target": "claude_agents_frontend_dev_done"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "claude_agents_frontend_dev",
-      "target": "claude_agents_frontend_dev_engineering_standards"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "claude_agents_frontend_dev",
-      "target": "claude_agents_frontend_dev_product_rules_from_the_spec_and_the_review"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".claude/agents/frontend-dev.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "claude_agents_frontend_dev",
-      "target": "claude_agents_frontend_dev_scope"
     },
     {
       "relation": "contains",
@@ -7099,5 +7954,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "c4e48a372e387e25dc8fcef6b6804525ee2b041f"
+  "built_at_commit": "95e65b4a466724c7f61fc963d8ab589a7a1dc0e2"
 }
