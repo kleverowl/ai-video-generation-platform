@@ -82,7 +82,7 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked ·
 - [ ] **U-4:** Logins on the new machine: `! gcloud auth login`, `! wrangler login`, `! gh auth login`, `! oci setup config`.
 - [ ] **U-5:** Create the GCP projects and billing, and file quota requests. Checklist comes from T-02.
 - [ ] **U-6:** Approve spend for the GPU POC runs (T-15). devops-deploy prepares dry-runs first.
-- [ ] **U-7:** Add a git remote (`git remote add origin …`) whenever you want to push.
+- [x] **U-7:** Remote is `https://github.com/kleverowl/ai-video-generation-platform` (public). The plan protocol still says agents **never push**; the user pushes.
 
 ---
 
