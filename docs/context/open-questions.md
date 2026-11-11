@@ -85,5 +85,5 @@ Conflicts between `system_architecture_technical_specification.md` (the "Spec") 
 
 ## Pending external answers
 - **OQ-11:** Lightricks licence item 20 (POC-0).
-- **OQ-12:** Data residency (sets the region).
+- **OQ-12:** ✅ Resolved → ADR-0003. Region is us-central1; data is processed in the US.
 - **OQ-13:** TTS engine and its weights licence.

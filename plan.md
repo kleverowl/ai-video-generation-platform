@@ -41,7 +41,8 @@ The main Claude session is the **Lead**. The Lead plans, assigns, integrates and
 
 ## 1. Protocol: the Lead follows this every iteration
 
-1. **Machine check.** If `.claude/.machine-setup-done` is missing, run `/setup-machine` first.
+1. **Readiness gate (blocking).** Run `bash scripts/verify-machine.sh`. If it does not print `READY`, run `/setup-machine` and fix every FAIL.
+   **No coding task (T-04 and later) may start until it passes.** Only T-01 to T-03 (setup, docs and ADR drafting) may run before that.
 2. **Orient.** Read `docs/context/current-state.md` and §3 below. Use `graphify query "<topic>"` before broad reads.
 3. **Pick the ready set.** That is every task in §3 that:
    - has status `[ ]` or `[~]`
@@ -77,11 +78,13 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked ·
 ## 2. Needs you (the Lead keeps this list current)
 
 - [ ] **U-1:** Send the licence question to Lightricks. Drafted in T-02.
-- [ ] **U-2:** Data residency. Is APAC processing required? The answer sets the region: `europe-west4` vs `asia-southeast1`.
+- [x] **U-2:** Region decided: **us-central1** (ADR-0003). Fallback region: europe-west4.
 - [ ] **U-3:** Accept or amend the ADRs drafted in T-03 (OQ-1 to OQ-4) and T-05 (backend language).
 - [ ] **U-4:** Logins on the new machine: `! gcloud auth login`, `! wrangler login`, `! gh auth login`, `! oci setup config`.
 - [ ] **U-5:** Create the GCP projects and billing, and file quota requests. Checklist comes from T-02.
 - [ ] **U-6:** Approve spend for the GPU POC runs (T-15). devops-deploy prepares dry-runs first.
+- [ ] **U-8:** Which server hosts the production Claude (Oracle A1 control plane or a separate worker VM)? Also approve running `scripts/claude-server/install-skills.sh` there (T-19).
+- [ ] **U-9:** In `.env.example`, change `GCP_REGION` to `us-central1` (ADR-0003). Claude can't edit it, because the deny rule `Read(./.env.*)` in `.claude/settings.json` also matches the template. Either edit it yourself, or narrow the rule to the real env files (`.env.local`, `.env.production`, `.env.*.local`).
 - [x] **U-7:** Remote is `https://github.com/kleverowl/ai-video-generation-platform` (public). The plan protocol still says agents **never push**; the user pushes.
 
 ---
@@ -92,8 +95,8 @@ Gate column: `Q` = qa-security · `A` = architecture-guard.
 
 | ID | Status | Agent | Deps | Gate | Task | Done when |
 |---|---|---|---|---|---|---|
-| T-01 | [ ] | Lead | — | — | **Machine setup** via `/setup-machine`, including agent-browser (project devDependency + project-scope skill) | Marker file exists; tool table reported |
-| T-02 | [ ] | Lead | — | — | **Phase 0 pack** in `docs/phase0/`: (a) draft email to Lightricks on LTX-2.x Attachment A items 19 and 20, for a text-to-video SaaS; (b) TTS-engine shortlist with **verified** weight licences, sources linked; (c) quota-request checklist (Cloud Run L4 + RTX PRO 6000 in both candidate regions, ephemeral-disk per-instance limit, AWS G/VT); (d) GCP project, billing and spend-cap setup steps | Four files exist; every vendor fact has a source URL; U-1 and U-5 updated |
+| T-01 | [ ] | Lead | — | — | **Machine setup** via `/setup-machine`: toolchain, project plugins, agent-browser (devDependency + project skill), impeccable engine, Chrome, graphify | `bash scripts/verify-machine.sh` prints **READY** (exit 0); marker written |
+| T-02 | [ ] | Lead | — | — | **Phase 0 pack** in `docs/phase0/`: (a) draft email to Lightricks on LTX-2.x Attachment A items 19 and 20, for a text-to-video SaaS; (b) TTS-engine shortlist with **verified** weight licences, sources linked; (c) quota-request checklist (Cloud Run L4 + RTX PRO 6000 in **us-central1** (L4 there may need a quota increase) and europe-west4 as the fallback, ephemeral-disk per-instance limit, AWS G/VT); (d) GCP project, billing and spend-cap setup steps | Four files exist; every vendor fact has a source URL; U-1 and U-5 updated |
 | T-03 | [ ] | Lead | — | — | **Draft ADRs** for OQ-1 (database), OQ-2 (asset storage), OQ-3 (preemptible GPU), OQ-4 (billing data), all with status `Proposed` | ADRs plus rows in `decisions.md`; U-3 listed |
 | T-04 | [ ] | backend-dev | — | Q | **Job contract** in `packages/job-contract/`: JSON Schemas (draft 2020-12) for job request, GPU task overrides (clip ranges), clip manifest, done-marker, exit-code classes, model manifest (SHA-256); valid and invalid example fixtures; one-command validation (e.g. `uvx check-jsonschema`) | All fixtures validate or fail as expected via one documented command |
 | T-05 | [ ] | backend-dev | — | Q | **ADR-0002 evidence**: hello-world FastAPI vs Node service idle RSS in Docker on arm64, recorded via `/poc-record`. The Lead updates the ADR recommendation (`Proposed`) | POC note plus ADR updated; U-3 updated |
@@ -111,6 +114,7 @@ Gate column: `Q` = qa-security · `A` = architecture-guard.
 | T-16 | [ ] | frontend-dev | T-05 (accepted), T-12 | Q | **Web app**: submit → narration approval → progress (clips k/n) → download; dashboard (job list, cancel, cost panel *estimate* vs *reconciled* with manual refresh) against the fake runner | Lint, typecheck and unit tests pass; Playwright smoke e2e passes |
 | T-17 | [ ] | backend-dev | T-15 | Q, A | **Integrate ComfyUI + LTX** into the gpu-worker `Generator` with the POC-3 winning config | One real clip in the cloud (approved run) |
 | T-18 | [ ] | qa-security | T-11, T-16 | — | **Pre-push hardening**: secret scan of the full history (gitleaks), dependency audit, authZ tests (cross-user object access), presigned-URL expiry test | Report in `docs/security/`; all high findings fixed by their owners |
+| T-19 | [ ] | devops-deploy | U-8, T-09 | Q, A | **Production-server Claude video skills**: review the `infra/claude-server/` bundle (`skills.txt`), add server-side `.claude/settings.json` deny rules and a least-privilege OS user plan, dry-run `scripts/claude-server/install-skills.sh`. The real install on the server needs the user's approval | Dry-run lists every skill; qa-security approves the settings; install command awaiting U-8 approval |
 
 When the queue is exhausted, the Lead re-plans from `architecture-review/05-implementation-roadmap.md` Phases 4–6 and assigns agents using §0. Don't invent scope beyond 04 and the ADRs.
 

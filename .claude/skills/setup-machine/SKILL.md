@@ -34,7 +34,7 @@ The goal is a machine that matches the project's standard tooling.
 | gh | GitHub CLI (repos, PRs) | `brew install gh` | `gh --version` |
 | python 3.12 | workers, graphify | `brew install python@3.12` | `python3 --version` (≥3.10) |
 | uv | Python tool and venv manager | `brew install uv` | `uv --version` |
-| node 22 LTS + npm | web app, ctx7, wrangler, gcloud MCP | `brew install node@22`, then `brew link --overwrite node@22` | `node -v` (≥20) |
+| node 22 LTS + npm (**22+ required**) | web app, ctx7, wrangler, gcloud MCP | `brew install node@22`, then `brew link --overwrite node@22` | `node -v` (≥20) |
 | **gcloud CLI** | Cloud Run, GCS, Artifact Registry | Official archive. Apple silicon: `curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-arm.tar.gz && tar -xf google-cloud-cli-darwin-arm.tar.gz -C "$HOME" && "$HOME/google-cloud-sdk/install.sh" --quiet --path-update true --command-completion true`. Intel Macs use `…-darwin-x86_64.tar.gz`. Source: https://docs.cloud.google.com/sdk/docs/install-sdk | `gcloud --version` (new shell) |
 | gcloud components | beta/alpha commands used by Cloud Run GPU jobs | `gcloud components install beta --quiet` | `gcloud beta --help` |
 | **wrangler** (Cloudflare CLI) | R2 buckets, tokens, DNS | **Project-local** (Cloudflare's recommendation): `npm i -D wrangler@latest` in the repo root. If there is no root `package.json`, first create a tooling-only one: `{"name":"vidgen-tooling","private":true}`. | `npx wrangler --version` |
@@ -44,6 +44,7 @@ The goal is a machine that matches the project's standard tooling.
 | psql (libpq) | Postgres client for the Oracle DB | `brew install libpq && brew link --force libpq` | `psql --version` |
 | jq | JSON on the CLI | `brew install jq` | `jq --version` |
 | oci CLI | manage the Oracle Always Free VM | `brew install oci-cli` | `oci --version` |
+| Google Chrome | real-browser inspector for `design-taste-frontend` (needs Node 22+ and Chrome/Edge) | `brew install --cask google-chrome` | app present |
 | aws CLI (optional) | only for fallback #4 quota requests | `brew install awscli` | `aws --version` |
 | **agent-browser** (Vercel Labs, Apache-2.0) | browser automation for agents: reads pages as an accessibility tree. Used by frontend-dev and qa-security for UI checks and e2e smoke tests | **Project-local:** `npm i -D agent-browser` in the repo root, then `npx agent-browser install` (downloads Chrome for Testing; first time only). Source: https://github.com/vercel-labs/agent-browser | `npx agent-browser --version` |
 
@@ -87,8 +88,6 @@ for p in context7 feature-dev frontend-design typescript-lsp pyright-lsp chrome-
          playwright security-guidance code-simplifier terraform cloudflare; do
   claude plugin install "$p@claude-plugins-official" --scope project
 done
-# the ui-ux-pro-max marketplace is registered by the project's extraKnownMarketplaces (after you trust the folder)
-claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill --scope project
 ```
 
 Then ask the user to run `/reload-plugins`, or to restart the session.
@@ -97,7 +96,7 @@ Then ask the user to run `/reload-plugins`, or to restart the session.
 |---|---|
 | context7 | everyone: current library docs |
 | feature-dev | Lead: architect, explorer and reviewer agents |
-| frontend-design, ui-ux-pro-max | frontend-dev |
+| frontend-design | frontend-dev (ui-ux-pro-max is vendored as a project skill, not a plugin) |
 | typescript-lsp, pyright-lsp | frontend-dev, backend-dev: code intelligence for TS and Python |
 | chrome-devtools-mcp, playwright | frontend-dev, qa-security: browser e2e, Lighthouse, a11y |
 | security-guidance | qa-security: warns on risky edits |
@@ -133,8 +132,15 @@ Ask the user to run each one in the prompt with the `!` prefix:
 - `! oci setup config` (Oracle API key)
 - Cloudflare MCP: OAuth happens automatically on first tool use.
 
-## 6. Mark done and report
-1. Write `.claude/.machine-setup-done` (git-ignored) containing the date, OS/arch, and the version table. From then on, the SessionStart hook stays silent.
+## 5b. Design and video skills (vendored in the repo; just verify)
+- Vendored skills are listed in `.claude/skills/THIRD_PARTY.md`: the design set, GSAP, video-editing-ffmpeg and the others. They arrive with `git clone`, so there is nothing to install for them.
+- **impeccable engine:** run `sh .claude/skills/impeccable/scripts/impeccable engine-probe`. It downloads the macOS binary and verifies it against `engine-checksums.txt`. `scripts/bin/` is git-ignored.
+- **Production-server bundle:** run `sh scripts/claude-server/install-skills.sh /tmp/claude-server-check --dry-run`. Every listed skill must resolve. The real server install is plan.md T-19, and it needs user approval.
+
+## 6. READINESS GATE, then mark done
+Run `bash scripts/verify-machine.sh`. **It must print `READY` and exit 0.** For every FAIL, fix it with the hint shown and re-run. Do not write the marker and do not start any coding while it fails.
+
+1. Only after `READY`: write `.claude/.machine-setup-done` (git-ignored) containing the date, OS/arch, and the version table. From then on, the SessionStart hook stays silent.
 2. Report a table of tool | status (present / installed / skipped / needs login).
 3. Read `docs/context/current-state.md` and state the single next action.
 

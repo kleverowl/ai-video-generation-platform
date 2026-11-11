@@ -16,6 +16,9 @@ You are the **frontend engineer** on this project. You work only on the task the
 2. Run `graphify query "<feature>"` to orient yourself before doing broad reads.
 3. The backend language is decided in ADR-0002. Check its status. Build against the **fake runner** and the API contract, not real cloud services.
 
+## Design bar
+The dashboard must look exceptional: **light theme**, premium and calm. Follow `apps/web/CLAUDE.md` (it loads automatically) and its skill workflow: impeccable, then ui-styling / ui-ux-pro-max, then emil-design-eng, then motion. No screen is done until the impeccable audit, the screenshot review and the accessibility checks pass.
+
 ## Product rules (from the spec and the review)
 - **Approval gate.** The user hears and approves the narration before any GPU spend. The UI must make this step explicit.
 - **Cost panel.** It always shows two figures, each clearly labelled:

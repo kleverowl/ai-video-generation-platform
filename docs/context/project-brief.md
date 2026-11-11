@@ -19,7 +19,7 @@
 ## Architecture in 10 lines
 
 1. **Control plane:** Oracle Always Free A1 (arm64) runs web, API, auth, Postgres, the Postgres-backed queue, the dispatcher and the reconciler. Cloudflare sits in front.
-2. **GPU:** Cloud Run **GPU Jobs**, scale-to-zero, one region (default `europe-west4`, or `asia-southeast1` if residency requires it).
+2. **GPU:** Cloud Run **GPU Jobs**, scale-to-zero, one region: **`us-central1`** (ADR-0003). Fallback region: `europe-west4`.
 3. **GPU SKU:** decided by POC-3. Baseline RTX PRO 6000 96 GB (20 vCPU/80 GiB) vs cost-down L4 24 GB (**8 vCPU/32 GiB**).
 4. **Model:** LTX-2.5 distilled via ComfyUI. A slim, hash-pinned set is copied from GCS to the **ephemeral disk**.
 5. **Pipeline:** TTS (CPU job) → user approval → GPU job (≤45-min tasks, per-clip checkpoints, 1–2 retries) → render (CPU job, FFmpeg) → R2.

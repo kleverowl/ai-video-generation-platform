@@ -1,0 +1,7 @@
+# Skills installed (project scope) on the production-server Claude. One folder name per line.
+video-editing-ffmpeg
+ltx-2-5-prompter
+tts-pronunciation
+cost-estimate
+poc-record
+find-docs

@@ -103,6 +103,8 @@ See section 18. In short:
 
 **GPU provider decision: Google Cloud Run Jobs. Primary region europe-west4. asia-southeast1 if APAC data residency is required.**
 
+> **Superseded by ADR-0003 (2026-11-11):** the region is **us-central1**, with europe-west4 as the fallback.
+
 **[TRADE-OFF]**
 - Async generation has no user-latency requirement.
 - Tier 1 regions are exactly 1/1.2 the Singapore price on every line item.

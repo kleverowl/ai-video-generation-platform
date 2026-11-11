@@ -48,6 +48,12 @@ architecture-review/   Architecture review deliverables (01–06)
 | `/tts-pronunciation` | Respelling Indian names for TTS |
 | `/find-docs` | Current docs via Context7 |
 
+**Design skills** for the light-theme dashboard: impeccable, ui-styling, ui-ux-pro-max, emil-design-eng, apple-design, animate, design-taste-frontend, GSAP (core, react, timeline, performance). The workflow is in `apps/web/CLAUDE.md`, and sources and licences are in `.claude/skills/THIRD_PARTY.md`.
+
+**Video editing:** the `/video-editing-ffmpeg` skill. A production-server Claude bundle (`infra/claude-server/`) installs the video skills in project scope on the server.
+
+**Readiness gate:** `bash scripts/verify-machine.sh` must print `READY` before any coding starts.
+
 **Remotion** skills are not vendored. See `.claude/skills-dormant/README.md` for how to install them if an ADR adopts Remotion.
 
 **Plugins** are enabled in `.claude/settings.json`. `/setup-machine` installs them on each new machine.

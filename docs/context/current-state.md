@@ -25,11 +25,14 @@
 ## Next actions
 The work queue lives in **`plan.md`** (§3 tasks, §2 *Needs you*). The next task is **T-01** (`/setup-machine` on the new Mac), then T-02 to T-05.
 
+## Decisions since review
+- ADR-0003: Cloud Run region **us-central1** (cheapest tier; europe-west4 fallback).
+
 ## Blockers
 - Licence answer (POC-0). Blocks paid launch, not the POC spike.
 
 ## Key numbers (verified; see 04 §15.1)
-| Config | Tier 1 (europe-west4) | Singapore |
+| Config | **us-central1** (Tier 1, ADR-0003) | Singapore (not used) |
 |---|---|---|
 | L4 8 vCPU/32 GiB | $1.4209/h | $1.7051/h |
 | RTX PRO 6000 20/80 | $3.1868/h | $3.8241/h |
