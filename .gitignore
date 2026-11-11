@@ -1,0 +1,90 @@
+# ── Secrets (never commit) ─────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*-sa-key.json
+*service-account*.json
+credentials*.json
+secrets/
+
+# ── AI model weights & media (live in GCS / R2, never in git) ──
+models/
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.onnx
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.flac
+!docs/**/*.mp4
+
+# ── Node / Next.js ─────────────────────────────────────
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+.turbo/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# ── Terraform ──────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+.terraform.lock.hcl.bak
+
+# ── Local scratch / POC raw output ─────────────────────
+tmp/
+scratch/
+docs/poc/raw/
+
+# ── Claude Code (personal, not shared) ─────────────────
+.claude/settings.local.json
+.claude/.machine-setup-done
+CLAUDE.local.md
+
+# ── graphify ──
+#    graph is committed so other machines need no rebuild; machine-specific/temp files are not
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/.graphify_*.json
+graphify-out/.graphify_*.txt
+graphify-out/.needs_update
+graphify-out/cache/stat-index.json
+graphify-out/cache/ast/
+!graphify-out/.graphify_labels.json
+
+# ── OS / editors ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+graphify-out/20[0-9][0-9]-*/
+graphify-out/graph.html

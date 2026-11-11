@@ -1,0 +1,23 @@
+# Keep the graph focused on source + curated docs
+node_modules/
+.next/
+dist/
+build/
+.venv/
+models/
+secrets/
+tmp/
+scratch/
+docs/poc/raw/
+.terraform/
+*.tfstate
+*.lock
+package-lock.json
+pnpm-lock.yaml
+# 03 is a verbatim concatenation of round files; 01/02/04 already carry the substance
+architecture-review/03-technical-debate.md
+
+# Dormant / third-party skill code is not project knowledge
+.claude/skills-dormant/
+.claude/skills/ltx-2-5-prompter/
+.claude/skills/find-docs/

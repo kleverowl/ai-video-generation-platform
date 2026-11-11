@@ -1,0 +1,20 @@
+# Normalise line endings (repo is developed on Windows, deployed on Linux)
+* text=auto eol=lf
+
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.mp4 binary
+*.wav binary
+*.safetensors binary
+*.gguf binary
+graphify-out/graph.json merge=graphify

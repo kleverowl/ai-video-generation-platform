@@ -1,0 +1,585 @@
+# Complete Video Generation Platform – System Architecture & Infrastructure Plan
+
+Proposed architecture Low-cost, on-demand GPU
+
+Objective: Build a web-based AI video generation platform that supports Instagram Reels, YouTube videos (including 2–3 minute and longer videos), and other user-selected video formats, while minimizing infrastructure and GPU costs.
+
+The central principle is to keep the web application online using the existing Oracle VPS, but rent GPU computing only when a video-generation job needs it.
+
+# 1. Infrastructure overview
+
+The platform will use three primary infrastructure providers: Oracle Cloud, Google Cloud and Cloudflare.
+
+| Component | Provider | Selected service / configuration |
+| --- | --- | --- |
+| Web application | Oracle Cloud | Existing Always Free VPS |
+| VPS resources | Oracle Cloud | 2 vCPU, 12 GB RAM, 200 GB SSD |
+| Frontend | Oracle VPS | Next.js |
+| Backend API | Oracle VPS | Application backend |
+| Database | Oracle VPS | PostgreSQL |
+| Job management | Oracle VPS | Job queue and worker orchestration |
+| GPU processing | Google Cloud | Cloud Run Jobs |
+| GPU | Google Cloud | NVIDIA L4, 24 GB VRAM |
+| CPU | Google Cloud | Initially 4 vCPU |
+| RAM | Google Cloud | Initially 16 GiB |
+| GPU region | Google Cloud | Singapore (`asia-southeast1`), subject to availability and quota |
+| AI model storage | Google Cloud | Cloud Storage Standard, approximately 50 GB |
+| Container registry | Google Cloud | Artifact Registry |
+| Video and audio storage | Cloudflare | R2 |
+| Video rendering | Initially GPU worker / CPU processing | Remotion + FFmpeg |
+
+Important: The L4 configuration is the initial target, not a guarantee of available capacity. Confirm Cloud Run Jobs GPU support, quota, pricing and regional availability before deployment.
+
+# 2. Complete system architecture
+
+The following diagram shows how all components communicate.
+
+mermaid
+
+```mermaid
+flowchart TB
+    USER["User / Browser"]
+
+    subgraph ORACLE["ORACLE CLOUD - ALWAYS FREE VPS"]
+        WEB["Next.js Frontend"]
+        API["Backend API"]
+        AUTH["Authentication"]
+        DB[("PostgreSQL Database")]
+        QUEUE["Video Job Queue"]
+        ORCH["Job Orchestrator"]
+        STATUS["Job Status Manager"]
+    end
+
+    subgraph GOOGLE["GOOGLE CLOUD - SINGAPORE"]
+        AR["Artifact Registry"]
+
+        GCS[("Google Cloud Storage<br/>Permanent AI Models")]
+
+        subgraph GPUJOB["Cloud Run GPU Job - On Demand"]
+            GPU["NVIDIA L4<br/>24 GB VRAM"]
+            CPU["4 vCPU / 16 GiB RAM"]
+
+            COMFY["ComfyUI API"]
+            LTX["LTX-2.5 22B Q4"]
+            TTS["VoiceStudio TTS"]
+            WHISPER["Whisper"]
+
+            COMFY --> LTX
+            GPU --- COMFY
+            GPU --- TTS
+            CPU --- COMFY
+            CPU --- TTS
+        end
+
+        subgraph RENDER["CPU Rendering"]
+            REMOTION["Remotion"]
+            FFMPEG["FFmpeg / Loudnorm"]
+            REMOTION --> FFMPEG
+        end
+    end
+
+    subgraph CLOUDFLARE["CLOUDFLARE"]
+        R2[("Cloudflare R2<br/>Generated Assets")]
+    end
+
+    USER --> WEB
+    WEB --> API
+    API --> AUTH
+    API --> DB
+    API --> QUEUE
+    QUEUE --> ORCH
+
+    ORCH -->|"Execute Cloud Run Job"| GPUJOB
+    AR -->|"Pull Docker Images"| GPUJOB
+    GCS -->|"Read AI Model Files"| GPUJOB
+
+    GPUJOB -->|"Generated clips and audio"| R2
+    GPUJOB -->|"Job completion"| STATUS
+
+    STATUS --> DB
+
+    R2 -->|"Read assets for rendering"| RENDER
+    RENDER -->|"Final video"| R2
+
+    API -->|"Signed download URL"| USER
+```
+
+# 3. Oracle VPS – Web application and central management
+
+Your existing Oracle Always Free VPS will remain online continuously.
+
+Available resources:
+
+- 2 vCPU
+- 12 GB RAM
+- 200 GB SSD
+
+It will be responsible for managing the entire platform, not generating AI videos.
+
+### Software running on Oracle VPS
+
+| Software | Responsibility |
+| --- | --- |
+| Next.js | User interface and web application |
+| Backend API | Receives and manages requests |
+| PostgreSQL | Users, jobs, settings and metadata |
+| Job queue | Maintains pending video-generation requests |
+| Job orchestrator | Communicates with Google Cloud |
+| Status manager | Tracks processing progress |
+| R2 integration | Creates signed download links |
+
+### What happens when a user requests a video?
+
+1. User logs into the application.
+2. Selects the video format.
+3. Chooses duration, aspect ratio, voice and other options.
+4. Submits the generation request.
+5. Oracle creates a unique job ID.
+6. The job enters the processing queue.
+7. Oracle triggers a Google Cloud Run Job.
+
+Oracle does not need a GPU to perform these operations.
+
+# 4. Google Cloud Run – On-demand GPU infrastructure
+
+This is the most important part of the architecture because GPU computing is expected to be the biggest variable cost.
+
+### Initial hardware configuration
+
+Google Cloud Run Jobs
+
+On-demand
+
+NVIDIA L4 - GPU computing processor | Overview, Specs, Details | SHI
+
+[shi.ca](<https://www.shi.ca/product/46051810/NVIDIA-L4-GPU-computing-processor?utm_source=chatgpt.com>)
+
+# NVIDIA L4
+
+24 GB GPU VRAM · Singapore region target
+
+# 4
+
+vCPU
+
+# 16 GiB
+
+System RAM
+
+# 1
+
+GPU per execution
+
+# 0
+
+Persistent GPU instances
+
+### How GPU execution works
+
+The GPU will not remain running permanently.
+
+For each video-generation request:
+
+1. Oracle submits a Cloud Run Job execution.
+2. Google provisions the GPU resources.
+3. The container starts.
+4. The worker initializes its software.
+5. AI models are accessed and loaded.
+6. Video generation begins.
+7. Generated assets are uploaded to R2.
+8. The job exits.
+
+Once the execution ends, GPU, CPU and RAM billing stops.
+
+There is no need to manually shut down the GPU or send a shutdown signal from Oracle.
+
+Important: Cloud Run Jobs are finite executions, not permanently running GPU servers. A new execution is required for a new independent job.
+
+# 5. AI processing architecture
+
+The AI processing pipeline will consist of separate Docker images.
+
+The images are separate to make maintenance and deployment easier, but GPU processing will be sequential.
+
+### Docker image 1: ComfyUI + LTX-2.5
+
+text
+
+```text
+comfyui-ltx-worker/
+│
+├── ComfyUI/
+├── custom_nodes/
+├── workflows/
+│
+├── models/
+│   ├── diffusion_models/
+│   ├── text_encoders/
+│   └── vae/
+│
+├── python_dependencies/
+└── worker_entrypoint.py
+```
+
+Responsibilities:
+
+- Load ComfyUI.
+- Load LTX-2.5 22B Q4.
+- Receive generation parameters.
+- Execute the appropriate workflow.
+- Generate video clips.
+- Upload generated clips to R2.
+
+### Docker image 2: VoiceStudio + Whisper
+
+text
+
+```text
+voice-worker/
+│
+├── VoiceStudio/
+├── Whisper/
+├── voice_models/
+├── audio_processing/
+└── worker_entrypoint.py
+```
+
+Responsibilities:
+
+- Generate speech using TTS.
+- Process voice audio.
+- Transcribe audio using Whisper.
+- Perform alignment or other supported audio processing.
+- Upload generated audio to R2.
+
+### Processing rule
+
+Never run LTX-2.5 and VoiceStudio simultaneously on the same GPU.
+
+The execution should be sequential:
+
+text
+
+```text
+Start GPU
+    |
+    v
+Load LTX-2.5
+    |
+    v
+Generate video clips
+    |
+    v
+Release LTX resources
+    |
+    v
+Load VoiceStudio
+    |
+    v
+Generate voice audio
+    |
+    v
+Run Whisper if required
+    |
+    v
+Upload assets to R2
+    |
+    v
+Exit GPU Job
+```
+
+The worker can use one shared GPU execution to process the different stages.
+
+# 6. AI model storage – Google Cloud Storage
+
+Google Cloud Storage will be the permanent storage location for AI model files.
+
+We will initially allocate approximately 50 GB.
+
+Bucket name: `video-models`
+
+text
+
+```text
+gs://video-models/
+│
+├── ltx-2.5/
+│   ├── diffusion_model/
+│   ├── text_encoder/
+│   ├── vae/
+│   └── other_required_models/
+│
+├── voicestudio/
+│   └── voice_models/
+│
+└── whisper/
+    └── whisper_models/
+```
+
+### How model storage works
+
+- Upload AI model files to Google Cloud Storage once.
+- Keep the bucket permanently.
+- Give Cloud Run workers permission to read the models.
+- Mount the bucket into the container using Cloud Storage FUSE or implement controlled downloading and local caching.
+- Load models into system RAM and GPU VRAM when needed.
+
+Important storage consideration: Google Cloud Storage is not a local SSD. For reliable high-performance model loading, I recommend copying the required model files to temporary local storage before inference, rather than relying on repeated random reads directly from a mounted bucket.
+
+Also, Cloud Run's writable filesystem is ephemeral and memory-backed. Large temporary model copies need careful RAM and storage planning. The 16 GiB system RAM allocation is not automatically an additional 50 GB SSD.
+
+The model bucket remains available even after the GPU job terminates.
+
+# 7. Output storage – Cloudflare R2
+
+Cloudflare R2 will be used for permanent generated assets.
+
+Bucket name: `video-output`
+
+text
+
+```text
+video-output/
+│
+├── users/
+│   │
+│   ├── user-001/
+│   │   ├── job-001/
+│   │   │   ├── clips/
+│   │   │   ├── audio/
+│   │   │   ├── thumbnails/
+│   │   │   └── final-video.mp4
+│   │   │
+│   │   └── job-002/
+│   │
+│   └── user-002/
+│       └── job-003/
+```
+
+R2 will store:
+
+- Generated video clips.
+- Voice audio.
+- Background music, where applicable.
+- Intermediate assets needed for rendering.
+- Final MP4 videos.
+- Thumbnails and previews.
+
+### Why R2?
+
+- No need for a permanently running storage server.
+- No conventional internet egress charge for downloads from R2.
+- Suitable for user downloads.
+- Storage scales with actual usage.
+
+Use signed URLs or an authenticated download endpoint to control access to users' videos.
+
+# 8. Video rendering architecture – Remotion and FFmpeg
+
+AI generation and final video assembly are separate operations.
+
+LTX generates the video clips. VoiceStudio generates the audio. Remotion combines everything into the final timeline.
+
+### Rendering workflow
+
+text
+
+```text
+Generated video clips
+        +
+Generated voice audio
+        +
+Background music
+        +
+Captions / subtitles
+        |
+        v
+   Remotion Timeline
+        |
+        v
+     FFmpeg
+        |
+        v
+ Audio loudnorm
+        |
+        v
+  Final MP4 Video
+        |
+        v
+   Cloudflare R2
+```
+
+### Where should rendering happen?
+
+My initial recommendation is to use a separate CPU-only worker, without renting another GPU.
+
+For the first implementation, this can be a Cloud Run CPU Job or another suitable CPU execution environment.
+
+However, Remotion rendering needs adequate memory and CPU, particularly for longer videos and complex compositions. Benchmark it before fixing the final CPU configuration.
+
+# 9. Complete job lifecycle
+
+Every user request will follow this lifecycle.
+
+| Step | Operation | Infrastructure |
+| --- | --- | --- |
+| 1 | User submits request | Oracle VPS |
+| 2 | Job record created | PostgreSQL |
+| 3 | Request added to queue | Oracle VPS |
+| 4 | GPU job triggered | Oracle → Google |
+| 5 | Docker image pulled | Artifact Registry |
+| 6 | Model files accessed | Google Cloud Storage |
+| 7 | AI video generated | Cloud Run GPU |
+| 8 | Voice generated | Cloud Run GPU |
+| 9 | Audio processing | Cloud Run GPU |
+| 10 | Assets uploaded | Cloudflare R2 |
+| 11 | Timeline rendered | CPU worker |
+| 12 | Final video uploaded | Cloudflare R2 |
+| 13 | Job marked completed | Oracle VPS |
+| 14 | Signed download link created | Oracle VPS |
+| 15 | User downloads video | Cloudflare R2 |
+
+# 10. Cost architecture
+
+The goal is to avoid paying for idle GPU infrastructure.
+
+### Fixed and usage-based expenses
+
+| Component | Billing type |
+| --- | --- |
+| Oracle VPS | Existing Always Free allocation |
+| Google Cloud Storage | Monthly storage + operations |
+| Artifact Registry | Image storage |
+| Cloud Run GPU | Per execution |
+| Cloud Run CPU | Per execution |
+| Cloud Run RAM | Per execution |
+| CPU rendering | Per execution |
+| Cloudflare R2 | Storage + applicable operations |
+| Network transfer | Depends on data movement |
+
+### Example GPU compute estimate
+
+Using the previously discussed illustrative Singapore pricing:
+
+| Resource | Hourly cost |
+| --- | --- |
+| L4 GPU | $0.67212 |
+| 4 vCPU | $0.25920 |
+| 16 GiB RAM | $0.11520 |
+| Total | $1.04652/hour |
+
+For a hypothetical 7.5-minute execution:
+
+| Usage | Compute cost |
+| --- | --- |
+| One video | $0.131 |
+| Five separate videos | $0.654 |
+| Ten separate videos | $1.309 |
+| Thirty separate videos | $3.925 |
+
+These figures are illustrative, before applicable free allowances, regional pricing adjustments, storage and networking. They assume 7.5 minutes of total execution per video, which must be benchmarked. A five-minute finished video may take substantially longer to generate.
+
+Important: These are not complete finished-video costs. CPU rendering, network transfers, model-loading overhead and R2 operations must also be measured.
+
+# 11. Automatic cost-control mechanisms
+
+The following controls should be implemented from the beginning.
+
+| Control | Configuration |
+| --- | --- |
+| GPU concurrency | 1 initially |
+| Job retries | 0 initially |
+| Job timeout | 60–90 minutes initially |
+| GPU startup | On demand |
+| GPU shutdown | Automatic on completion |
+| Model storage | Persistent |
+| Output storage | Persistent |
+| Queue | Sequential |
+| Failed jobs | Notify user and record failure |
+| Billing alerts | $5, $10 and $20 thresholds |
+
+A billing alert is a notification, not a guaranteed spending cap. Implement application-level limits as well.
+
+# 12. GPU availability and fallback strategy
+
+The architecture should not depend permanently on a single GPU provider.
+
+| Priority | Provider | GPU | Region |
+| --- | --- | --- | --- |
+| 1 | Google Cloud Run Jobs | L4 24 GB | Singapore |
+| 2 | Google Cloud Run Jobs | L4 24 GB | Mumbai, if access is granted |
+| 3 | AWS Batch / EC2 | A10G 24 GB | Mumbai |
+| 4 | Alternative GPU provider | L4 / RTX 4090 class | Based on availability and pricing |
+
+The Oracle backend should communicate with GPU workers through a common job interface.
+
+This means you can change the GPU provider without redesigning the frontend or the entire application.
+
+A fallback should only be triggered for genuine capacity or availability failures, not blindly for every failed generation.
+
+# 13. Security and permissions
+
+- Oracle communicates with Google Cloud through a securely authenticated service account.
+- Cloud Run uses a dedicated service identity.
+- Model storage permissions are read-only.
+- Output storage credentials are restricted to the required R2 bucket operations.
+- Users can only access their own generated files.
+- Download URLs are signed and expire.
+- Secrets and API keys are stored outside Docker images.
+- Job requests are validated before execution.
+
+# 14. Deployment roadmap
+
+I recommend implementing this in stages rather than building everything at once.
+
+1. Phase 1 – Web application
+   Deploy Next.js, backend API, database and job management on your Oracle VPS.
+   Deliverable: Users can submit video-generation requests and track jobs.
+2. Phase 2 – Storage infrastructure
+   Create the Google Cloud Storage model bucket, Cloudflare R2 output bucket and Artifact Registry repository.
+   Deliverable: Models and generated assets have permanent storage.
+3. Phase 3 – GPU worker
+   Build the ComfyUI + LTX Docker image and deploy one Cloud Run GPU Job in Singapore.
+   Deliverable: One submitted job can generate a video and upload it to R2.
+4. Phase 4 – Voice pipeline
+   Add VoiceStudio and Whisper to the sequential GPU processing workflow.
+   Deliverable: Generated videos include the required voice and audio processing.
+5. Phase 5 – Video rendering
+   Integrate Remotion and FFmpeg using a CPU worker.
+   Deliverable: Complete videos are assembled and uploaded to R2.
+6. Phase 6 – Production optimization
+   Measure model loading, GPU generation, CPU rendering, network transfer and total cost per video.
+   Deliverable: Reliable production pipeline with spending controls.
+
+# 15. Final architecture decisions
+
+| Decision | Selection | Status |
+| --- | --- | --- |
+| Web hosting | Existing Oracle VPS | Fixed |
+| Frontend | Next.js | Planned |
+| Database | PostgreSQL | Planned |
+| GPU processing | Google Cloud Run Jobs | Planned |
+| Primary GPU | NVIDIA L4 24 GB | Target |
+| GPU region | Singapore | Verify quota |
+| AI model storage | Google Cloud Storage | Selected |
+| Generated asset storage | Cloudflare R2 | Fixed |
+| Container registry | Artifact Registry | Planned |
+| Video generation | ComfyUI + LTX-2.5 Q4 | Planned |
+| Voice generation | VoiceStudio | Planned |
+| Transcription | Whisper | Planned |
+| Final rendering | Remotion + FFmpeg | Planned |
+| GPU lifecycle | On-demand, automatic termination | Selected |
+
+## Final architecture philosophy
+
+The platform follows three simple principles:
+
+1. Keep permanent infrastructure cheap: Oracle VPS hosts the web application, database and job management.
+2. Pay for expensive computing only when needed: Google Cloud provides temporary GPU resources for video generation.
+3. Keep files independent of computing: Google Cloud Storage preserves AI models, while Cloudflare R2 preserves generated videos and other assets.
+
+The GPU is replaceable. The storage is permanent. The web application remains online.
+
+This gives you a platform that can start with a handful of videos per month and scale up without requiring a complete architectural redesign.
+
+One important production gate: Before accepting paid users, validate LTX-2.5's actual 24 GB VRAM requirements, model loading time, Cloud Run temporary storage capacity, GPU availability and commercial licensing for every model and voice used.

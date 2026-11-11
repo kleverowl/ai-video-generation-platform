@@ -1,0 +1,16 @@
+{
+  "0": "Original Cloud Run Plan",
+  "1": "Claude Workflow Skills",
+  "2": "Control Plane & Job Contract",
+  "3": "GPU Options & Fallbacks",
+  "4": "Final MVP Pipeline",
+  "5": "Decisions & Open Questions",
+  "6": "Cost Control & Storage",
+  "7": "LTX Model & Licensing",
+  "8": "plan.md: Autonomous Work Plan",
+  "9": "backend-dev.md",
+  "10": "frontend-dev.md",
+  "11": "devops-deploy.md",
+  "12": "qa-security.md",
+  "13": "LTX-2.5 22B Q4"
+}
