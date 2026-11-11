@@ -84,7 +84,7 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked ·
 - [ ] **U-5:** Create the GCP projects and billing, and file quota requests. Checklist comes from T-02.
 - [ ] **U-6:** Approve spend for the GPU POC runs (T-15). devops-deploy prepares dry-runs first.
 - [ ] **U-8:** Which server hosts the production Claude (Oracle A1 control plane or a separate worker VM)? Also approve running `scripts/claude-server/install-skills.sh` there (T-19).
-- [ ] **U-9:** In `.env.example`, change `GCP_REGION` to `us-central1` (ADR-0003). Claude can't edit it, because the deny rule `Read(./.env.*)` in `.claude/settings.json` also matches the template. Either edit it yourself, or narrow the rule to the real env files (`.env.local`, `.env.production`, `.env.*.local`).
+- [x] **U-9:** The env deny rule now covers only real env files, so Claude can maintain `.env.example`. `GCP_REGION` is set to `us-central1`.
 - [x] **U-7:** Remote is `https://github.com/kleverowl/ai-video-generation-platform` (public). The plan protocol still says agents **never push**; the user pushes.
 
 ---
